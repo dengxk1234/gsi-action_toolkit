@@ -42,7 +42,7 @@ FS_UUID=$(cat /proc/sys/kernel/random/uuid 2>/dev/null || echo "12345678-1234-12
 # -U: Sets UUID
 # -E ztailpacking: Inlines tail parts of files into metadata to save space
 # -z lz4hc: High compression mode, highly compatible with modern Android kernels
-MKER_OPTS=("-b" "4096" "-U" "$FS_UUID" "-E" "ztailpacking" "-z" "lz4hc")
+MKER_OPTS=("-b" "4096" "-U" "$FS_UUID" "-z" "lz4hc")
 
 if [ -n "$FC_FILE" ] && [ -f "$FC_FILE" ]; then
     log_success "Found plat_file_contexts at: $FC_FILE"
